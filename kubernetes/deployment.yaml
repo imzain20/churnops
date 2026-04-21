@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: churn-mlops
+  labels:
+    app: churn-mlops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: churn-mlops
+  template:
+    metadata:
+      labels:
+        app: churn-mlops
+    spec:
+      containers:
+      - name: churn-mlops
+        image: your-dockerhub-username/churn-mlops:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        - name: MODEL_PATH
+          value: "/app/models/model.pkl"
+        - name: CONFIG_PATH
+          value: "/app/config/config.yaml"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1"

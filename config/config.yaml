@@ -1,0 +1,30 @@
+environment:
+  name: production
+  debug: false
+
+database:
+  url: "postgresql://user:password@localhost:5432/churn_db"
+  pool_size: 10
+
+model:
+  path: "models/model.pkl"
+  input_features:
+    - "feature1"
+    - "feature2"
+    - "feature3"
+  output_feature: "churn"
+
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+kubernetes:
+  namespace: "churn-mlops"
+  replicas: 3
+
+docker:
+  image_name: "churn-mlops:latest"

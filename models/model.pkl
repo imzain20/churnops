@@ -1,0 +1,6 @@
+The model.pkl file is a binary file that contains the serialized version of the trained customer churn prediction model. Since I cannot generate a binary file directly, I will provide a placeholder indicating that this file should be created by saving the trained model using a library like joblib or pickle in your model training script.
+
+Please ensure to run the model training script to generate this file.
+
+# /churn-mlops/churn-mlops/models/model.pkl
+# This file is intentionally left blank. Please run the model training script to generate the trained model and save it as model.pkl.
